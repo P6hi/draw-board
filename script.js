@@ -23,6 +23,13 @@ function gridDraw(colour) {
 });
 }
 
+function gridReset() {
+    const grid = document.querySelectorAll("div.block");
+    grid.forEach((block) => {
+      block.style.backgroundColor = "white";
+});
+}
+
 gridCreator(16);
 gridDraw("black");
 
@@ -46,4 +53,9 @@ gridEraser.addEventListener("click", () => {
 const gridDrawer = document.getElementById("draw");
 gridDrawer.addEventListener("click", () => {
     gridDraw("black");
+});
+
+const gridReseter = document.getElementById("reset");
+gridReseter.addEventListener("click", () => {
+    gridReset();
 });

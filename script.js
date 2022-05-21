@@ -14,4 +14,12 @@ function gridCreator(gridNumber) {
 }
 }
 
-gridCreator(16);
+
+gridCreator(20);
+
+const grid = document.querySelectorAll("div.block");
+grid.forEach((block) => {
+    block.addEventListener("mouseenter", () => {
+        block.style.backgroundColor = "black";
+    })
+} )

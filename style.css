@@ -1,6 +1,8 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 #container {
@@ -12,13 +14,11 @@ body {
 }
 
 .row {
-    border: 1px solid black;
     flex: 1 1 0;
     display: flex;
 }
 
 .block {
-    border: 1px solid black;
     flex: 1 1 0;
 }
 

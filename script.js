@@ -17,8 +17,13 @@ function gridCreator(gridNumber) {
 function gridDraw(colour) {
     const grid = document.querySelectorAll("div.block");
     grid.forEach((block) => {
-        block.addEventListener("mouseenter", () => {
+        block.addEventListener("mousedown", () => {
             block.style.backgroundColor = colour;
+        })
+        block.addEventListener("mouseover", (e) => {
+            if (e.buttons === 1) {
+            block.style.backgroundColor = colour;
+        }
     })
 });
 }

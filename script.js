@@ -1,5 +1,11 @@
 const container = document.getElementById("container");
+const colourPicker = document.getElementById("colourpick");
 
+let userColour = colourPicker.value;
+colourPicker.addEventListener("change", (e) => {
+    userColour = e.target.value;
+    gridDraw(userColour);
+});
 
 function gridCreator(gridNumber) {
     for (i = 0; i < gridNumber; i++) {
@@ -37,7 +43,9 @@ function gridReset() {
 }
 
 gridCreator(16);
-gridDraw("black");
+gridDraw(userColour);
+
+
 
 const gridCreation = document.getElementById("gridCreation");
 gridCreation.addEventListener("click", () => {
@@ -48,7 +56,7 @@ gridCreation.addEventListener("click", () => {
 } else {
     alert('Invalid choice. Please choose a number from 1 to 100.');
 }
-    gridDraw("black");
+    gridDraw(userColour);
 })
 
 const gridEraser = document.getElementById("erase");
@@ -58,16 +66,10 @@ gridEraser.addEventListener("click", () => {
 
 const gridDrawer = document.getElementById("draw");
 gridDrawer.addEventListener("click", () => {
-    gridDraw("black");
+    gridDraw(userColour);
 });
 
 const gridReseter = document.getElementById("reset");
 gridReseter.addEventListener("click", () => {
     gridReset();
 });
-
-const colourPick = document.getElementById("colourpick");
-    colourPick.addEventListener("change", (e) => {
-    let userColour = e.target.value;
-    gridDraw(userColour);
-})

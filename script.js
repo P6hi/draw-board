@@ -14,19 +14,36 @@ function gridCreator(gridNumber) {
 }
 }
 
-
-gridCreator(16);
-
-const grid = document.querySelectorAll("div.block");
-grid.forEach((block) => {
-    block.addEventListener("mouseenter", () => {
-        block.style.backgroundColor = "black";
+function gridDraw(colour) {
+    const grid = document.querySelectorAll("div.block");
+    grid.forEach((block) => {
+        block.addEventListener("mouseenter", () => {
+            block.style.backgroundColor = colour;
     })
 });
+}
 
-const gridCreation = document.getElementById("gidCreation");
+gridCreator(16);
+gridDraw("black");
+
+const gridCreation = document.getElementById("gridCreation");
 gridCreation.addEventListener("click", () => {
+    let gridNumber = prompt('Choose grid size from 1 to 100.', '');
+    if (gridNumber <= 100 && gridNumber >= 1 && gridNumber !== false) {
     container.textContent = '';
-    let gridNumber = prompt('Choose grid size', '');
     gridCreator(gridNumber);
+} else {
+    alert('Invalid choice. Please choose a number from 1 to 100.');
+}
+    gridDraw("black");
 })
+
+const gridEraser = document.getElementById("erase");
+gridEraser.addEventListener("click", () => {
+    gridDraw("white");
+});
+
+const gridDrawer = document.getElementById("draw");
+gridDrawer.addEventListener("click", () => {
+    gridDraw("black");
+});

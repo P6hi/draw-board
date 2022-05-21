@@ -4,6 +4,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+.buttons {
+    display: flex;
+}
 
 #container {
     border: 1px solid black;

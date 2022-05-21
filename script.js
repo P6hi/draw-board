@@ -1,5 +1,6 @@
 const container = document.getElementById("container");
 
+
 function gridCreator(gridNumber) {
     for (i = 0; i < gridNumber; i++) {
     const row = document.createElement("div");
@@ -64,3 +65,9 @@ const gridReseter = document.getElementById("reset");
 gridReseter.addEventListener("click", () => {
     gridReset();
 });
+
+const colourPick = document.getElementById("colourpick");
+    colourPick.addEventListener("change", (e) => {
+    let userColour = e.target.value;
+    gridDraw(userColour);
+})

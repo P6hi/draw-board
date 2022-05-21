@@ -20,5 +20,6 @@ body {
 
 .block {
     flex: 1 1 0;
+    border: 1px solid black;
 }
 

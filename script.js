@@ -15,11 +15,18 @@ function gridCreator(gridNumber) {
 }
 
 
-gridCreator(20);
+gridCreator(16);
 
 const grid = document.querySelectorAll("div.block");
 grid.forEach((block) => {
     block.addEventListener("mouseenter", () => {
         block.style.backgroundColor = "black";
     })
-} )
+});
+
+const gridCreation = document.getElementById("gidCreation");
+gridCreation.addEventListener("click", () => {
+    container.textContent = '';
+    let gridNumber = prompt('Choose grid size', '');
+    gridCreator(gridNumber);
+})

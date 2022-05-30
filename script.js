@@ -2,7 +2,7 @@ const container = document.getElementById("container");
 const colourPicker = document.getElementById("colourpick");
 
 let userColour = colourPicker.value;
-colourPicker.addEventListener("change", (e) => {
+colourPicker.addEventListener("input", (e) => {
     userColour = e.target.value;
     gridDraw(userColour);
 });

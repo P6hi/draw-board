@@ -14,8 +14,8 @@ body {
 
 #container {
     border: 1px solid black;
-    height: 30vh;
-    width: 70vw;
+    height: 300px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     cursor: crosshair;
